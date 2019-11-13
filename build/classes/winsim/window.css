@@ -1,0 +1,10 @@
+.window {
+	-fx-padding: 0px;
+    -fx-background-color: #efebdf; /* set background to skyblue */
+   /* -fx-background-insets: 20, 40, 60, 80;*/
+    -fx-border-color: #fff #726e62 #726e62 #fff, #efebdf #aeaa9e #aeaa9e #efebdf; /* set border to red*/
+    -fx-border-insets: 0, 1;
+    -fx-border-width: 1; /* border width 3px */
+	-fx-font-family: Tahoma;
+	-fx-font-size: 14px;
+}
