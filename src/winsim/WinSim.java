@@ -14,7 +14,7 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author Konrad
+ * @author 
  */
 public class WinSim extends Application {
     

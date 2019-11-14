@@ -8,6 +8,10 @@
 	-fx-font-size: 14px;
 }
 
+.task.button {
+    
+}
+
 .dialog.button {
 	-fx-min-height: 21px;
 	-fx-min-width: 73px;
