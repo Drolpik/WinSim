@@ -80,16 +80,17 @@
    <bottom>
       <Pane prefHeight="29.0" styleClass="button" stylesheets="@button.css" BorderPane.alignment="CENTER_LEFT">
          <children>
-            <GridPane>
+            <GridPane fx:id="gp">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="65.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="135.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="135.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="[W] Start" />
                </children>
             </GridPane>
          </children>
