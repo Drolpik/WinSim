@@ -31,7 +31,7 @@ public class LoginInController implements Initializable
     {
         if(login.getText().equals("user") && haslo.getText().equals("123"))
         {
-            Parent tableViewParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+            Parent tableViewParent = FXMLLoader.load(getClass().getResource("/winsim/FXMLDocument.fxml"));
             Scene scenaLogowania = new Scene(tableViewParent);
             
             Stage noweOkno = (Stage)((Node)event.getSource()).getScene().getWindow();

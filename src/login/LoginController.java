@@ -3,47 +3,78 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package winsim;
+package login;
 
-import java.io.IOException;
+
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
+import winsim.FXMLDocumentController;
 
 
 /**
+ * FXML Controller class
  *
- * @author 
+ * @author Konrad
  */
-public class FXMLDocumentController implements Initializable {
+
+
+
+
+
+public class LoginController implements Initializable {
+
+    /**
+     * Initializes the controller class.
+     */
+    
+    //@FXML
+    
+  
     
     @FXML
-    private Label label;
+    private Button exit_btn;
     
     @FXML
-    private Button btn;
+    private Button log;
     
     @FXML
-    public GridPane gp01;
+    private TextField login;
+    
+    @FXML
+    private PasswordField pwd;
+    
+    private FXMLDocumentController c1;
+    
+   
+   @FXML
+   private void log_in(ActionEvent event) throws Exception {
+       if(login.getText().equals("user") && pwd.getText().equals("123")) {
+           ((Node)(event.getSource())).getScene().getWindow().hide();
+           c1.show();
+       }
+   }
             
     @FXML
     private void changeClass(Event event) {
         //System.out.println("You clicked me!");
         //label.setText("Hello World!");
         
-       label.setText("Clicked");
+       //label.setText("Clicked");
        //btn.getStyleClass().add("pressed");
        Button b = (Button)event.getSource();
        b.getStyleClass().add("pressed");
@@ -52,18 +83,12 @@ public class FXMLDocumentController implements Initializable {
        
     }
     
-
-    
-    public void show() {
-        gp01.setOpacity(1.);
-    }
-    
     @FXML
     private void changeBack(Event event) {
         //System.out.println("You clicked me!");
         //label.setText("Hello World!");
         
-       label.setText("WOW");
+       //label.setText("WOW");
        //btn.getStyleClass().remove(1);
        //btn.getStyleClass().removeAll(new ArrayList<>("pressed"));
        
@@ -79,20 +104,11 @@ public class FXMLDocumentController implements Initializable {
         Platform.exit();
     }
     
-   @FXML
-   private void showLoginForm() throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
-    Parent root1 = (Parent) fxmlLoader.load();
-    Stage stage1 = new Stage();
-    stage1.initStyle(StageStyle.UNDECORATED);
-    stage1.setScene(new Scene(root1));  
-    stage1.show();
-   }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
     }    
     
 }
