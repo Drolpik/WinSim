@@ -1,0 +1,5 @@
+.textfield {
+	-fx-border-color: #726e62 #fff #fff #726e62, #aeaa9e #efebdf #efebdf #aeaa9e;
+	-fx-border-insets: -1, 0;
+	-fx-padding: 2 0 0 2;
+}

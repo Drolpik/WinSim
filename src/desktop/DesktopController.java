@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package winsim;
+package desktop;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
@@ -33,7 +34,7 @@ import winsim.WinSim;
  *
  * @author 
  */
-public class FXMLDocumentController implements Initializable {
+public class DesktopController implements Initializable {
     
     @FXML
     private Label label;
@@ -91,19 +92,26 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void closeApp() {
+        
         Platform.exit();
+    }
+    @FXML
+    private void showStartMenu(Event e) throws IOException {
+        
+        //stage2.toFront();
     }
     
    @FXML
-   private void showLoginForm() throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
+   private void launchCalc() throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/calc/calc.fxml"));
     Parent root1 = (Parent) fxmlLoader.load();
     Stage stage1 = new Stage();
     stage1.initStyle(StageStyle.UNDECORATED);
     stage1.setScene(new Scene(root1));  
     stage1.show();
    }
-    
+   
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

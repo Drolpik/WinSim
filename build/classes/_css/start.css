@@ -1,0 +1,8 @@
+.element:hover{
+	-fx-background-color: #b7b5ae;
+}
+
+.banner {
+    -fx-font-size: 20;
+    -fx-font-weigth: bold;
+}

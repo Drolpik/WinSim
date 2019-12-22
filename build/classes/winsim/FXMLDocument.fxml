@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="winsim.FXMLDocumentController">
+<BorderPane onMousePressed="#rmfoc" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="winsim.FXMLDocumentController">
    <center>
       <AnchorPane minHeight="571.0" style="-fx-background-color: #3268A4;">
          <children>

@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package login;
+package start;
 
 
+import login.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,11 @@ import javafx.stage.Stage;
 
 import winsim.WinSim;
 import desktop.DesktopController;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.StageStyle;
 
 
 /**
@@ -39,7 +45,7 @@ import desktop.DesktopController;
 
 
 
-public class LoginController implements Initializable {
+public class StartController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -47,42 +53,27 @@ public class LoginController implements Initializable {
     
     //@FXML
     
-    private double xOffset = 0;
-    private double yOffset = 0;
+    //private double xOffset = 0;
+    //private double yOffset = 0;
 
   
     
-    @FXML
-    private Button exit_btn;
-    
-    @FXML
-    private Button log;
-    
-    @FXML
-    private TextField login;
-    
-    @FXML
-    private PasswordField pwd;
-    
-    //@FXML
-    public Rectangle tbar;
+   // @FXML
+    //public Rectangle tbar;
     
     
-    private Stage stage;
+   
     
     //Stage stage = (Stage) tbar.getScene().getWindow();
     
-    public void setStage(Stage stage){
-this.stage=stage;
-}
     
-   @FXML
+    
+   /*@FXML
     private void clicked(MouseEvent event) {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
             //login.setPromptText(String.valueOf(xOffset));
-            //login.setPromptText(Double.toString(xOffset));
-            //pwd.setPromptText(Double.toString(yOffset));
+          
         }
     
    /* @FXML
@@ -93,28 +84,18 @@ this.stage=stage;
             pwd.setPromptText(Double.toString(yOffset));
         }*/
    
-        @FXML
+        /*@FXML
         private void dragged(MouseEvent event) {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         }
     
-        
     
     
-    private DesktopController c1;
+    private FXMLDocumentController c1;
     
    
-   @FXML
-   private void log_in(ActionEvent event) throws Exception {
-       //if(login.getText().equals("user") && pwd.getText().equals("123")) {
-       if(!login.getText().isEmpty())
-           ((Node)(event.getSource())).getScene().getWindow().hide();
-           //c1.show();
-           
-           
-       //}
-   }
+   
             
    /* @FXML
     private void changeClass(Event event) {
@@ -146,11 +127,7 @@ this.stage=stage;
        
     }*/
     
-    @FXML
-    private void closeApp() throws InterruptedException {
-        Thread.sleep(1000);
-        Platform.exit();
-    }
+    
     
     
     
