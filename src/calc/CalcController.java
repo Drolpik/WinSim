@@ -53,6 +53,8 @@ public class CalcController implements Initializable {
     {
         action_label.setText("");
         solution.setText("");
+        this.number1 = 0;
+        this.number1 = 0;
     }
     
     @FXML
@@ -79,11 +81,11 @@ public class CalcController implements Initializable {
                 break;
                 
              case "/":
-                 if(this.number2 == 0)
+                 /*if(this.number2 == 0)
                  {
                      System.out.println("Error, division by zero!");
                      solution.setText("0");
-                 }
+                 }*/
                 String value_dash = solution.getText();
                 this.number2 = Long.parseLong(value_dash);
                 float result_dash = this.number1 / this.number2;
@@ -105,9 +107,10 @@ public class CalcController implements Initializable {
     
     
     
-    public void setStage(Stage stage){
-this.stage=stage;
-}
+    public void setStage(Stage stage)
+    {
+        this.stage=stage;
+    }
     
    @FXML
     private void clicked(MouseEvent event) {
