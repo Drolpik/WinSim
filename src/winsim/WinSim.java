@@ -35,10 +35,12 @@ public class WinSim extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        stage.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("/desktop/desktop.fxml"));
         
-        Scene scene = new Scene(root);
+        Stage desktopStage = new Stage();
+        desktopStage.initStyle(StageStyle.UNDECORATED);
+        Parent dekstopRoot = FXMLLoader.load(getClass().getResource("/desktop/desktop.fxml"));
+        
+        Scene desktopScene = new Scene(dekstopRoot);
         
         
         
@@ -49,76 +51,29 @@ public class WinSim extends Application {
         
        
 
-        stage.setX(bounds.getMinX());
-        stage.setY(bounds.getMinY());
-        stage.setWidth(bounds.getWidth());
-        stage.setHeight(bounds.getHeight());
+        desktopStage.setX(bounds.getMinX());
+        desktopStage.setY(bounds.getMinY());
+        desktopStage.setWidth(bounds.getWidth());
+        desktopStage.setHeight(bounds.getHeight());
         
-        //double xB = stage.getScene().getWindow().getX();
-        //double yB = stage.getScene().getWindow().getY();
-        
-        //Window window = stage.getScene().getWindow();
-        
-        //stage.setFullScreen(true);
-        
-        //stage.setFullScreenExitHint(null);
-        //stage.setFullScreenExitKeyCombination(KeyCombination.);
 
-        stage.setScene(scene);
-        stage.show();
-        
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/login.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage1 = new Stage();
-        //stage1.setFullScreen(true);
-        //stage1.setFullScreenExitHint("HEHEHEHEHE");
-        
-        //FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/start/start.fxml"));
-        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/calc/calc.fxml"));
 
-        Parent root2 = (Parent) fxmlLoader2.load();
-        Stage stage2 = new Stage();
-        stage2.initStyle(StageStyle.UNDECORATED);
-        stage2.setScene(new Scene(root2));
-        
-        stage2.show();
-
-        
-        //stage2.setY((double) bounds.getHeight() - stage2.getHeight() - 37.);
-        stage2.setX(200);
-        stage2.setY(200);
-        
-                
-        ((login.LoginController) fxmlLoader.getController()).setStage(stage1);
-        //private Rectangle tb = login.LoginController.tbar;
-        
-        stage1.initStyle(StageStyle.UNDECORATED);
-        stage1.setScene(new Scene(root1));
+        desktopStage.setScene(desktopScene);
+        desktopStage.show();
         
         
-        //System.out.println("bounds: "+bounds.getHeight());
-        //System.out.println("stage: "+stage2.getHeight());
-        
-        /*stage1.setX(bounds.getMinX());
-        stage1.setY(bounds.getMinY());
-        stage1.setWidth(bounds.getWidth());
-        stage1.setHeight(bounds.getHeight());*/
-        
-        //stage1.setFocused(false);
-        
-        stage1.show();
-        
-        Window w1;
-        w1 = (Window) stage1.getScene().getWindow();
-        
-        //FXMLLoader l1 = new FXMLLoader(getClass().getResource("/winsim/FXMLDocument.fxml"));
-       // ((winsim.FXMLDocumentController) l1.getController()).setw(w1);
-
+  
         
         
         
         
+        
+        
+        
+        
+        
+      
+      
     }
     
 

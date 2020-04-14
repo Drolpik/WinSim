@@ -5,7 +5,6 @@
  */
 package login;
 
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +31,8 @@ import desktop.DesktopController;
 /**
  * FXML Controller class
  *
- * @author Konrad
+ * @author 
  */
-
-
-
-
 
 public class LoginController implements Initializable {
 
@@ -47,8 +42,10 @@ public class LoginController implements Initializable {
     
     //@FXML
     
-    private double xOffset = 0;
-    private double yOffset = 0;
+   /**
+     * variables storing cursor position on screen while moving the title bar
+     */
+    private double xOffset, yOffset;
 
   
     
@@ -70,41 +67,57 @@ public class LoginController implements Initializable {
     
     private Stage stage;
     
-    //Stage stage = (Stage) tbar.getScene().getWindow();
+    /**
+     * function needed to pass the Stage object to the controller from the main project file
+     * @param stage 
+     */
+    public void setStage(Stage stage)
+    {
+        this.stage=stage;
+    }
     
-    public void setStage(Stage stage){
-this.stage=stage;
-}
-    
+    /**
+     * function handling the click event on the title bar
+     * @param event 
+     */
    @FXML
     private void clicked(MouseEvent event) {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();
-            //login.setPromptText(String.valueOf(xOffset));
-            //login.setPromptText(Double.toString(xOffset));
-            //pwd.setPromptText(Double.toString(yOffset));
         }
     
-   /* @FXML
-    private void dragged(MouseEvent event) {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-             login.setPromptText(Double.toString(xOffset));
-            pwd.setPromptText(Double.toString(yOffset));
-        }*/
-   
+   /**
+    * function handling the drag event on the title bar
+    * this function moves the window around with the mouse cursor
+    * @param event 
+    */
         @FXML
         private void dragged(MouseEvent event) {
             stage.setX(event.getScreenX() - xOffset);
             stage.setY(event.getScreenY() - yOffset);
         }
     
-        
+        /**
+         * function which closes the current app window
+         * @throws InterruptedException 
+         */
+        @FXML
+    private void closeApp() throws InterruptedException {
+        Stage stage = (Stage) tbar.getScene().getWindow();
+    // do what you have to do
+    stage.close();
+    }
+    
+    
     
     
     private DesktopController c1;
     
-   
+   /**
+    * function which allows to log in
+    * @param event
+    * @throws Exception 
+    */
    @FXML
    private void log_in(ActionEvent event) throws Exception {
        //if(login.getText().equals("user") && pwd.getText().equals("123")) {
@@ -116,42 +129,8 @@ this.stage=stage;
        //}
    }
             
-   /* @FXML
-    private void changeClass(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       //label.setText("Clicked");
-       //btn.getStyleClass().add("pressed");
-       Button b = (Button)event.getSource();
-       b.getStyleClass().add("pressed");
-       //btn.setStyle("-fx-padding: 2 0 0 2;");
-       
-       
-    }*/
-    
-    /*@FXML
-    private void changeBack(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       //label.setText("WOW");
-       //btn.getStyleClass().remove(1);
-       //btn.getStyleClass().removeAll(new ArrayList<>("pressed"));
-       
-       Button b = (Button)event.getSource();
-       
-       b.getStyleClass().removeAll("pressed");
-       b.getStyleClass().removeAll("default");
-       
-    }*/
-    
-    @FXML
-    private void closeApp() throws InterruptedException {
-        Thread.sleep(1000);
-        Platform.exit();
-    }
-    
+
+
     
     
     @Override

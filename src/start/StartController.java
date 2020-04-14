@@ -28,11 +28,6 @@ import javafx.stage.Stage;
 
 import winsim.WinSim;
 import desktop.DesktopController;
-import java.io.IOException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.StageStyle;
 
 
 /**
@@ -47,85 +42,8 @@ import javafx.stage.StageStyle;
 
 public class StartController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    
-    //@FXML
-    
-    //private double xOffset = 0;
-    //private double yOffset = 0;
-
-  
-    
-   // @FXML
-    //public Rectangle tbar;
-    
     
    
-    
-    //Stage stage = (Stage) tbar.getScene().getWindow();
-    
-    
-    
-   /*@FXML
-    private void clicked(MouseEvent event) {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-            //login.setPromptText(String.valueOf(xOffset));
-          
-        }
-    
-   /* @FXML
-    private void dragged(MouseEvent event) {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-             login.setPromptText(Double.toString(xOffset));
-            pwd.setPromptText(Double.toString(yOffset));
-        }*/
-   
-        /*@FXML
-        private void dragged(MouseEvent event) {
-            stage.setX(event.getScreenX() - xOffset);
-            stage.setY(event.getScreenY() - yOffset);
-        }
-    
-    
-    
-    private FXMLDocumentController c1;
-    
-   
-   
-            
-   /* @FXML
-    private void changeClass(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       //label.setText("Clicked");
-       //btn.getStyleClass().add("pressed");
-       Button b = (Button)event.getSource();
-       b.getStyleClass().add("pressed");
-       //btn.setStyle("-fx-padding: 2 0 0 2;");
-       
-       
-    }*/
-    
-    /*@FXML
-    private void changeBack(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       //label.setText("WOW");
-       //btn.getStyleClass().remove(1);
-       //btn.getStyleClass().removeAll(new ArrayList<>("pressed"));
-       
-       Button b = (Button)event.getSource();
-       
-       b.getStyleClass().removeAll("pressed");
-       b.getStyleClass().removeAll("default");
-       
-    }*/
     
     
     

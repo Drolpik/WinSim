@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="579.0" prefWidth="807.0" styleClass="window" stylesheets="@../_css/window.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="player.PlayerController">
+   <children>
+      <BorderPane layoutX="3.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="800.0">
+         <center>
+            <MediaView fx:id="media_view" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Slider fx:id="time_slider" />
+                  <Label fx:id="file_name" prefHeight="21.0" prefWidth="798.0">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="36.0" prefWidth="800.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#play" styleClass="default" stylesheets="@../_css/button.css" text="Play">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#pause" stylesheets="@../_css/button.css" text="Pause">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="270.0" layoutY="10.0" mnemonicParsing="false" onAction="#stop" stylesheets="@../_css/button.css" text="Stop">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#slower" stylesheets="@../_css/button.css" text="&lt;&lt;&lt;">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="75.0" layoutY="10.0" mnemonicParsing="false" onAction="#slow" stylesheets="@../_css/button.css" text="&lt;&lt;">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button layoutX="140.0" layoutY="10.0" mnemonicParsing="false" onAction="#fast" stylesheets="@../_css/button.css" text="&gt;&gt;">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#faster" stylesheets="@../_css/button.css" text="&gt;&gt;&gt;">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <StackPane prefHeight="36.0" prefWidth="244.0" />
+                        <Slider fx:id="volumeSlider" value="50.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <top>
+            <MenuBar styleClass="menubar" stylesheets="@../_css/menubar.css" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#open_movie" text="Open" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+      <Rectangle fx:id="tbar" height="25.0" layoutX="3.0" layoutY="2.0" onMouseDragged="#dragged" onMousePressed="#clicked" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#0556e3" />
+                  <Stop color="#2f91fa" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Button fx:id="exit_btn" contentDisplay="CENTER" graphicTextGap="6.0" layoutX="787.0" layoutY="6.0" mnemonicParsing="false" onAction="#closeApp" prefHeight="19.0" prefWidth="13.0" stylesheets="@../_css/button.css" text="x" textAlignment="CENTER">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="close" />
+            <String fx:value="small" />
+         </styleClass>
+      </Button>
+      <Label layoutX="7.0" layoutY="6.0" style="-fx-font-weight: bold;" text="Media Player" textFill="WHITE" />
+   </children>
+</AnchorPane>

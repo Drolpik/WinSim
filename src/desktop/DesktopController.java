@@ -45,73 +45,81 @@ public class DesktopController implements Initializable {
     @FXML
     public GridPane gp01;
             
-   /* @FXML
-    private void changeClass(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       label.setText("Clicked");
-       //btn.getStyleClass().add("pressed");
-       Button b = (Button)event.getSource();
-       b.getStyleClass().add("pressed");
-       //btn.setStyle("-fx-padding: 2 0 0 2;");
-       
-       
-    }*/
-    
+   
 
     
-    public void show() {
-        gp01.setOpacity(1.);
-    }
     
-    public void rmfoc() {
-        
-        this.w.setFocused(true);
-    }
+    
+    
     
     public Window w;
     
-    public void setw(Window w) {this.w = w;}
+    //public void setw(Window w) {this.w = w;}
     
-    /*@FXML
-    private void changeBack(Event event) {
-        //System.out.println("You clicked me!");
-        //label.setText("Hello World!");
-        
-       label.setText("WOW");
-       //btn.getStyleClass().remove(1);
-       //btn.getStyleClass().removeAll(new ArrayList<>("pressed"));
-       
-       Button b = (Button)event.getSource();
-       
-       b.getStyleClass().removeAll("pressed");
-       b.getStyleClass().removeAll("default");
-       
-    }*/
-    
+    /**
+     * function which terminates the entire project
+     */
     @FXML
     private void closeApp() {
         
         Platform.exit();
     }
-    @FXML
-    private void showStartMenu(Event e) throws IOException {
-        
-        //stage2.toFront();
-    }
     
+    
+    /**
+     * function which loads the Calculator subapp
+     * @throws IOException 
+     */
    @FXML
-   private void launchCalc() throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/calc/calc.fxml"));
-    Parent root1 = (Parent) fxmlLoader.load();
-    Stage stage1 = new Stage();
-    stage1.initStyle(StageStyle.UNDECORATED);
-    stage1.setScene(new Scene(root1));  
-    stage1.show();
-   }
-   
+  private void loadCalc() throws IOException {
+      FXMLLoader calcLoader = new FXMLLoader(getClass().getResource("/calc/calc.fxml"));
+        Parent calcRoot = (Parent) calcLoader.load();
+        Stage calcStage = new Stage();
+        calcStage.initStyle(StageStyle.UNDECORATED);
+        calcStage.setScene(new Scene(calcRoot));
+        
+        calcStage.show();
+        
+        ((calc.CalcController) calcLoader.getController()).setStage(calcStage);
+  }
   
+  /**
+     * function which loads the Media Player subapp
+     * @throws IOException 
+     */
+   @FXML
+  private void loadPlayer() throws IOException {
+      FXMLLoader playerLoader = new FXMLLoader(getClass().getResource("/player/player.fxml"));
+        Parent playerRoot = (Parent) playerLoader.load();
+        Stage playerStage = new Stage();
+        playerStage.initStyle(StageStyle.UNDECORATED);
+        playerStage.setScene(new Scene(playerRoot));
+        
+        playerStage.show();
+        
+        ((player.PlayerController) playerLoader.getController()).setStage(playerStage);
+  }
+   
+  /**
+     * function which loads the Web Browser subapp
+     * @throws IOException 
+     */
+   @FXML
+           private void loadBrowser() throws IOException {
+        FXMLLoader browserLoader = new FXMLLoader(getClass().getResource("/browser/browser.fxml"));
+        Parent browserRoot = (Parent) browserLoader.load();
+        Stage browserStage = new Stage();
+        browserStage.initStyle(StageStyle.UNDECORATED);
+        browserStage.setScene(new Scene(browserRoot));
+        
+        browserStage.show();
+        
+        ((browser.BrowserController) browserLoader.getController()).setStage(browserStage);
+           }
+           
+           
+           
+           
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

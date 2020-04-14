@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="184.0" prefWidth="455.0" stylesheets="@../_css/window.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="184.0" prefWidth="455.0" stylesheets="@../_css/window.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <children>
       <Label fx:id="label" layoutX="67.0" layoutY="116.0" minHeight="16" minWidth="69" styleClass="smalltext" text="User name:" />
       <Rectangle fx:id="tbar" height="25.0" layoutX="3.0" layoutY="3.0" onMouseDragged="#dragged" onMousePressed="#clicked" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="448.0">

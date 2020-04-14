@@ -1,0 +1,9 @@
+.menubar {
+    -fx-padding: 2px;
+    -fx-background-color: #efebdf;
+    /*-fx-border-color: #fff #726e62 #726e62 #fff, #efebdf #aeaa9e #aeaa9e #efebdf;
+    -fx-border-insets: -1, 0;
+    -fx-border-width: 1;*/
+    -fx-font-family: Tahoma;
+    -fx-font-size: 11px;
+}
